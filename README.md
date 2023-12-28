@@ -27,10 +27,9 @@
 
 ## About The Project
 
-Analyzing greenhouse gases at industrial & touristic areas & Revive environment ,
-We have a machine consisting of some sensors that read the percentages of greenhouse gases and temperatures in industrial or tourist places. The machine relies on entering this data into API daily to use this data that was recorded to train the data using machine learning to know the permissible percentages in the secretion of oxide gases or greenhouse gases
+📌Lexical analysis : is the process of converting a sequence of characters in a source code file into a sequence of tokens that can be more easily processed by a compiler or interpreter. It is often the first phase of the compilation process and is followed by syntax analysis and semantic analysis.
 
-
+📌Syntax analysis, also known as parsing, is the process of analyzing a string of symbols, either in natural language or in a computer language, according to the rules of formal grammar. It involves checking whether a given input is correctly structured according to the syntax of the language.
 
 
 
