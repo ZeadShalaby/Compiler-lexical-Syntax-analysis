@@ -9,7 +9,7 @@
 <h3 align="center">Compiler-lexical-Syntax-analysis</h3>
 
   <p align="center">
-     Project Compiler with lexical & Syntax Analysis
+   Compiler Project  with  two phases  lexical & Syntax Analysis
     <br/>
     <br/>
   </p>
