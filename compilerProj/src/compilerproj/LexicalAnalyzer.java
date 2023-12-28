@@ -1,11 +1,22 @@
 package compilerproj;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+
 
 public class LexicalAnalyzer {
 
@@ -15,15 +26,15 @@ public class LexicalAnalyzer {
 
     static {
         keywords = new HashMap<>();
-        keywords.put("abstract", "keyword");
-        keywords.put("assert", "keyword");
-        keywords.put("boolean", "keyword");
-        keywords.put("break", "keyword");
-        keywords.put("byte", "keyword");
-        keywords.put("case", "keyword");
-        keywords.put("catch", "keyword");
-        keywords.put("char", "keyword");
-        keywords.put("class", "keyword");
+        keywords.put("package", "keyword");
+        keywords.put("private", "keyword");
+        keywords.put("protected", "keyword");
+        keywords.put("public", "keyword");
+        keywords.put("return", "keyword");
+        keywords.put("short", "keyword");
+        keywords.put("static", "keyword");
+        keywords.put("strictfp", "keyword");
+        keywords.put("super", "keyword");
         keywords.put("const", "keyword");
         keywords.put("continue", "keyword");
         keywords.put("default", "keyword");
@@ -46,15 +57,15 @@ public class LexicalAnalyzer {
         keywords.put("long", "keyword");
         keywords.put("native", "keyword");
         keywords.put("new", "keyword");
-        keywords.put("package", "keyword");
-        keywords.put("private", "keyword");
-        keywords.put("protected", "keyword");
-        keywords.put("public", "keyword");
-        keywords.put("return", "keyword");
-        keywords.put("short", "keyword");
-        keywords.put("static", "keyword");
-        keywords.put("strictfp", "keyword");
-        keywords.put("super", "keyword");
+        keywords.put("abstract", "keyword");
+        keywords.put("assert", "keyword");
+        keywords.put("boolean", "keyword");
+        keywords.put("break", "keyword");
+        keywords.put("byte", "keyword");
+        keywords.put("case", "keyword");
+        keywords.put("catch", "keyword");
+        keywords.put("char", "keyword");
+        keywords.put("class", "keyword");
         keywords.put("switch", "keyword");
         keywords.put("synchronized", "keyword");
         keywords.put("this", "keyword");
@@ -67,9 +78,9 @@ public class LexicalAnalyzer {
         keywords.put("while", "keyword");
     }
 
-    private static final String NUMBER_REGEX = "[0-9]+";
-    private static final String SYMBOL_REGEX = "[\\!&;(){}]";
-    private static final String OPERATOR_REGEX = "[=+*-></]";
+    private static final String SYMBOLS_REGEX = "[\\!&;(){}]";
+    private static final String NUMBERS_REGEX = "[0-9]+";
+    private static final String OPERATORS_REGEX = "[=+*-></]";
 
 
             //to split if(
@@ -105,9 +116,9 @@ public class LexicalAnalyzer {
      
     public static void analyze(String input) {
         Pattern identifierPattern = Pattern.compile(IDENTIFIER_REGEX);
-        Pattern numberPattern = Pattern.compile(NUMBER_REGEX);
-        Pattern symbolPattern = Pattern.compile(SYMBOL_REGEX);
-        Pattern operatorPattern = Pattern.compile(OPERATOR_REGEX);
+        Pattern symbolPattern = Pattern.compile(SYMBOLS_REGEX);
+        Pattern numberPattern = Pattern.compile(NUMBERS_REGEX);
+        Pattern operatorPattern = Pattern.compile(OPERATORS_REGEX);
 
         String[] tokens = input.split("\\s+");
 
@@ -143,13 +154,50 @@ public class LexicalAnalyzer {
 
      
     public static void main(String[] args) {
-          Scanner inp = new Scanner(System.in);
+        
+        // input //
+        Scanner inp = new Scanner(System.in);
         String input = inp.nextLine();
-         List<String> tokenizedInput = tokenize(input);
+        List<String> tokenizedInput = tokenize(input);
 
+        // to space between valus input //
         for (String tokens : tokenizedInput) {
            analyze(tokens);
         }
         
+        // to insert values of input into file //
+         try {
+ 
+            String content = "class test{"+"\n"+"public static void main(String[] args){"+"\n"+input+"\n"+"}"+"}";
+
+            File file = new File("D:/my projects/last year project/compiler/project compiler/compilerProj/test/test.java");
+            
+            // if file doesnt exists, then create it
+            
+            if (!file.exists()) {
+                    file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
+
+        // to test if syntax errors or not call file and check //
+        
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        int compilationResult = compiler.run(null, null, null, "D:/my projects/last year project/compiler/project compiler/compilerProj/test/test.java");
+        if (compilationResult == 0) {
+            System.out.println("The syntax of the Java source file is correct.");
+        } else {
+            System.out.println("The syntax of the Java source file is noooooot correct.");
+        }
+        
+           System.out.println("Done");
+
     }
 }
