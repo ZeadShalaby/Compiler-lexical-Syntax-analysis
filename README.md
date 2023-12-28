@@ -2,7 +2,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Compiler-lexical-Syntax-analysis">
-          <img src="https://img.freepik.com/premium-photo/hand-touching-virtual-info-graphics-with-trolley-cart-icons-technology-online-shopping-business-concept_50039-2510.jpg?w=996" alt="Logo" width="300" height="270">
+          <img src="https://imgur.com/C1AuCeL?w=996" alt="Logo" width="300" height="270">
     
   </a>
     
