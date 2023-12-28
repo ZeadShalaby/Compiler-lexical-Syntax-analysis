@@ -6,7 +6,7 @@
     
   </a>
     
-<h3 align="center">Compiler-lexical-Syntax-analysis</h3>
+<h3 align="center">Compiler-Lexical-Syntax-Analysis</h3>
 
   <p align="center">
    Compiler Project  with  two phases  lexical & Syntax Analysis
