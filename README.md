@@ -28,9 +28,11 @@
 ## About The Project
 
 📌Lexical analysis : 
+
 is the process of converting a sequence of characters in a source code file into a sequence of tokens that can be more easily processed by a compiler or interpreter. It is often the first phase of the compilation process and is followed by syntax analysis and semantic analysis.
 
 📌Syntax analysis :
+
 also known as parsing, is the process of analyzing a string of symbols, either in natural language or in a computer language, according to the rules of formal grammar. It involves checking whether a given input is correctly structured according to the syntax of the language.
 
 
