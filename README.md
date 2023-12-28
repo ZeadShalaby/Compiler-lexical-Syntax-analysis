@@ -2,8 +2,8 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Compiler-lexical-Syntax-analysis">
-          <img src="https://imgur.com/C1AuCeL?w=996" alt="Logo" width="300" height="270">
-    
+          <img src="https://imgur.com/C1AuCeL.png?w=996" alt="Logo" width="300" height="270">
+
   </a>
     
 <h3 align="center">Compiler-Lexical-Syntax-Analysis</h3>
