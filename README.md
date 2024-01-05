@@ -6,7 +6,7 @@
 
   </a>
     
-<h3 align="center">Compiler-Lexical-Syntax-Analysis</h3>
+<h3 align="center">Building a simple Compiler from scratch in java</h3>
 
   <p align="center">
    Compiler Project  with  two phases  lexical & Syntax Analysis
@@ -28,13 +28,25 @@
 
 ## About The Project
 
-📌Lexical analysis : 
+📌Lexical analysis :
 
-is the process of converting a sequence of characters in a source code file into a sequence of tokens that can be more easily processed by a compiler or interpreter. It is often the first phase of the compilation process and is followed by syntax analysis and semantic analysis.
+What is Lexical Analysis?!
+Lexical analysis is the first phase of a compiler. It takes the modified source code from language preprocessors that are written in the form of sentences. The lexical analyzer breaks these syntax's into a series of tokens, by removing any whitespace or comments in the source code.
+
+Tokenization: Start by creating a lexer that will take the source code and break it into tokens.
+Regular Expressions: We will use regular expressions to match the tokens.
+Symbol Table: We will use a symbol table to store the tokens.
 
 📌Syntax analysis :
 
-also known as parsing, is the process of analyzing a string of symbols, either in natural language or in a computer language, according to the rules of formal grammar. It involves checking whether a given input is correctly structured according to the syntax of the language.
+What is Syntax Analysis?!
+Syntax analysis is the second phase of a compiler. It takes the token produced by lexical analysis as input and generates a parse tree (or syntax tree). Syntax analysis checks the tokens for any syntax errors. It also adds the additional information to the parse tree.
+
+Grammar: We will use a grammar to define the syntax of our language.
+Parser: We will use a parser to parse the tokens.
+Abstract Syntax Tree: We will use an abstract syntax tree to store the tokens.
+Error Handling: We will use error handling to handle any syntax errors.
+
 
 
 ## Contributing
